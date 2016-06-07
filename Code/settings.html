@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+
+        <title>Settings</title>
+        <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" /> 
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+        <link href="css/wickedpicker.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/jquery-validation.css">
+
+    </head>
+    <body>
+<!-- header -->
+    <div class="header clearfix" id="header">
+        <nav>
+          <ul class="nav nav-pills pull-right" id="logout">
+            <li role="presentation" ><a href="#" style="color:white" >Log Out</a></li>
+          </ul>
+        </nav>
+        <!--<img class="header-logo" src="images/header-logo.png" />-->
+    </div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <br>
+            <p class="text-center" style="color: green ; font-size:16px">Energy And Cost Analysis</p>
+            
+            <hr>
+
+            <div class="btn-group btn-group-vertical btn-group-lg vertical-btns" >
+                         
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='index.html' "> 
+                    Home
+                </button> 
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='energyMeter.html' "> 
+                    Energy Meter
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='qualityStats.html' "> 
+                    Quality Stats
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='history.html' "> 
+                    View History
+                </button> 
+                <!--  <button class="btn btn-default btns-color" type="button" onclick="window.location.href='cost.html' ">
+                    Cost Calculator
+                </button>-->
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='settings.html' ">
+                    Settings
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='aboutUS.html' "> 
+                    About Us
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='team.html' "> 
+                    Team
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- /col-3 -->
+        <div class="col-sm-9 col-sm-offset-1 col-md-pull-1" id="middle-screen">
+            <br>
+            <div class="row">
+                <div class="col-sm-offset-5" >
+                     <p  style="color: green; font-size:22px "> <b>Privacy Settings</b> </p>
+                </div>
+            </div>
+
+            <div class="row" id="select-form" style="padding-top:40px">
+
+                <div class="col-sm-5">
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-4" >
+                            <button  type="button" class="btn btn-info btn-block" onclick="ChangeEmail()">Change Email</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div  class="col-sm-12" style="padding-top:60px">
+                            <form class="form-horizontal" id="select-sub-form">
+
+                                <div class="form-group">
+                                    <label for="current-email" class="col-sm-4 control-label">Current Email</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control email" id="current-email" name="current-email" placeholder="Enter the Previous Email" disabled>
+                                        <div id="invalid-current-email" > 
+                                        </div>
+                                        <div id="empty-current-email">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="new-email" class="col-sm-4 control-label">New Email</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control email" id="new-email" name="new-email" placeholder="Enter the New Email"  disabled>
+                                        <div id="invalid-new-email" > 
+                                        </div>
+                                        <div id="empty-new-email">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-4">
+                                        <button  type="button" id="enter-email" class="email btn btn-info btn-block" disabled>Enter</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div> 
+
+                    <div class="row">
+                        <div class="col-sm-offset-5" >
+                             <p  id="success-change-email" style="color: green; font-size:16px "></p>
+                        </div>
+                    </div> 
+
+                </div>
+
+
+                <div class="col-sm-5 col-sm-offset-1">
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-4" >
+                            <button  type="button" class="btn btn-info btn-block" onclick="ChangePassword()">Change Password</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div  class="col-sm-12" style="padding-top:60px">
+                            <form class="form-horizontal" id="select-sub-form-2">
+
+                                <div class="form-group">
+                                    <label for="current-pass" class="col-sm-4 control-label">Current Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="pass form-control" id="current-pass" name="current-pass" placeholder="Enter the Current Password" disabled>
+                                        <div id="invalid-current-pass" > 
+                                        </div>
+                                        <div id="empty-current-pass">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="new-pass" class="col-sm-4 control-label">New Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="pass form-control" id="new-pass" name="new-pass" placeholder="Enter the New Password"  disabled>
+                                        <div id="invalid-new-pass" > 
+                                        </div>
+                                        <div id="empty-new-pass">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-4">
+                                        <button  type="button" id="enter-pass" class="pass btn btn-info btn-block" disabled>Enter</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                     <div class="row">
+                        <div class="col-sm-offset-5" >
+                             <p  id="success-change-pass" style="color: green; font-size:16px "></p>
+                        </div>
+                    </div> 
+
+                </div>
+
+                
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-offset-2" >
+                     <p id="emptyResult-error" style="color: red; font-size:16px "> </p>
+                </div>
+            </div>
+            
+        </div>
+        <!--/col-span-9-->
+    </div>
+</div>
+
+
+<footer class="text-center" id="footer" style="margin-top:124px">SECAB ©2016 - All Rights Reserved.</footer>
+
+</div>
+
+<script src="js/jquery-2.2.0.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-validate.min.js"></script>
+<script src="js/sha256.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/settings.js" ></script>
+<script language="JavaScript" type="text/javascript" src="js/logout.js" ></script>
+
+</body>
+
+</html>

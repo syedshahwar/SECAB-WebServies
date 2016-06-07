@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <title>SECAB Login</title>
+      <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" /> 
+      <meta name="generator" content="Bootply" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/styles.css" rel="stylesheet">
+  
+   </head>
+   <body id="login-body">
+
+     <img id="logo" src="images/logo.png" style="width:300px; height:300px; margin-top:80px"  />
+
+      <div id="loginModal" class=" modal show " tabindex="-1"  aria-hidden="true">
+      <div class="modal-dialog " >
+         <!--Login container -->
+         <div  class="modal-content  ">
+           <div id ="container-login" >
+               <div class="modal-header">
+                  <h3 class="text-center" style="color: green">Energy And Cost Analysis</h3>
+               </div>
+               <div class="modal-body">
+
+                  <div id="login-heading">
+                    <h2 class="text-center" style="color: #80C340">Login</h2>
+                  </div>    
+
+                  <form id="login-form" class="form col-md-12 center-block">
+                     <div class="form-group">
+                        <input type="text" id="email" class="form-control input-lg" placeholder="Email">
+                        <div id="invalid-email-alert" > 
+                        </div>
+                        <div id="empty-email-field">
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div id="invalid-password-alert" > 
+                        </div>
+                        <input type="password" id="password" class="form-control input-lg" placeholder="Password" >
+                        <div id="empty-password-field"> 
+                        </div>
+                     </div>
+
+                    <div id="login-alert" > 
+                    </div>
+
+                     <div class="form-group">
+                        <span class="pull-middle">
+                        <input type="button" id= "btn-login" class="btn btn-success btn-lg btn-block btn-login-send" value="Sign In">
+                     </div>    
+                     <!-- <div class="form-group">
+                        <a id="forgot-password" style="color: #4F8A10" href="#">Forgot Password?</a> 
+                     </div>-->
+                  </form>
+                </div>  
+                <div class="modal-footer"> 
+                </div>
+
+              </div>
+
+                 <!--forgot password container -->
+              <div id ="container-forgot-password" style = "display:none;">
+                  <div class="modal-header">
+                     <h3 class="text-center" style="color: #4F8A10">One Screen Admin Panel</h3>
+                  </div>
+
+                  <div id="enter-your-email-heading">
+                    <h3 class="text-center" style="color: #80C340"> Enter your email</h3>
+                  </div>  
+
+                  <div class="modal-body">
+                     <form class="form col-md-12 center-block">
+                        <div class="form-group">
+                           <input type="text" id="email-forgot-password" class="form-control input-lg" placeholder="Email">
+                        </div>
+
+                        <div class="form-group"><div class="form-group">
+                        <span class="pull-right">
+                        <input type="button" id= "btn-send" class="btn btn-success btn-lg btn-block btn-login-send" value="Send">
+
+                        </div>
+
+                        <div class="form-group">
+                            <a id="back-to-login" style="color: #4F8A10" href="#"> Back to Login </a>
+                        </div>    
+                     </form>
+                  </div>
+                  <div class="modal-footer">  
+                  </div> 
+              </div>
+            </div>    
+         </div>
+      </div>
+
+      <script src="js/jquery-2.2.0.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/sha256.js"></script>
+      <script language="JavaScript" type="text/javascript" src="js/login.js" ></script>
+   </body>
+</html>

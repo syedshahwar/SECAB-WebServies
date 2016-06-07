@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<title> Admin Login </title>
+	<link rel="shortcut icon" type="image/ico" href="images/favicon.ico" /> 
+	<script src="js/jquery-2.2.0.js"></script>
+	<script src="js/sha256.js"></script>
+</head>
+
+<body>
+
+	<form>
+		User Name:<br>
+		<input id="userName" type="text"  required>
+		<br>
+		Email:<br>
+		<input id="email" type="text" required>
+		<br>
+		Password:<br>
+		<input id="password" type="text" required>
+		<br>
+		<input id= "btn-signup" type="button" value="Sign Up">
+	</form>
+
+	<div id ="divn">
+
+	</div>
+
+
+	<script>
+
+	var userName='';
+	var email='';
+	var password='';
+	var passwordHash='';
+
+	$(function() {
+		
+		$("#btn-signup").click(ajaxCall);
+	});
+	
+	function ajaxCall()
+	{
+		userName = $("#userName").val();
+		email = $("#email").val();
+		password = $("#password").val();
+		passwordHash = CryptoJS.SHA256(password).toString();
+		   
+		$.ajax({
+			type:"POST",
+			url:"/signup",
+			data: {uName: userName , mail: email , pass: passwordHash} ,
+			success:function(response){
+				if(response == "Inserted")
+				{
+					console.log("Done");
+					alert("Inserted!!!");
+					
+					//window.location.replace("login.html");
+				}
+				else
+				{
+					alert("Error!!!");
+				}
+			}
+		});		
+
+	}
+	</script>
+</body>
+
+</html>

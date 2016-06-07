@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+
+        <title>History</title>
+        <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" /> 
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+        <link href="css/wickedpicker.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/jquery-validation.css">
+
+    </head>
+    <body>
+<!-- header -->
+    <div class="header clearfix" id="header">
+        <nav>
+          <ul class="nav nav-pills pull-right" id="logout">
+            <li role="presentation" ><a href="#" style="color:white" >Log Out</a></li>
+          </ul>
+        </nav>
+        <!--<img class="header-logo" src="images/header-logo.png" />-->
+    </div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <br>
+            <p class="text-center" style="color: green ; font-size:16px">Energy And Cost Analysis</p>
+            
+            <hr>
+
+            <div class="btn-group btn-group-vertical btn-group-lg vertical-btns" >
+                         
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='index.html' "> 
+                    Home
+                </button> 
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='energyMeter.html' "> 
+                    Energy Meter
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='qualityStats.html' "> 
+                    Quality Stats
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='history.html' "> 
+                    View History
+                </button> 
+                <!--  <button class="btn btn-default btns-color" type="button" onclick="window.location.href='cost.html' ">
+                    Cost Calculator
+                </button>-->
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='settings.html' ">
+                    Settings
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='aboutUS.html' "> 
+                    About Us
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='team.html' "> 
+                    Team
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- /col-3 -->
+        <div id="history-mid">
+        <div class="col-sm-7 col-sm-offset-2 col-md-pull-1" id="middle-screen">
+            <br>
+            <div class="row">
+                <div class="col-sm-offset-5" >
+                     <p  style="color: green; font-size:22px "> <b>History</b> </p>
+                </div>
+            </div>
+
+            <div class="row" id="select-form">
+
+                <div  class=" col-sm-7" >
+                    <p class="text-center" style="color: green ; font-size:18px"> Select from the available options </p>
+                    <hr>
+
+                    <form class="form-horizontal" id="select-sub-form">
+
+                      <div class="form-group">
+                        <label for="appliance" class="col-sm-3 control-label">Appliance</label>
+                        <div class="col-sm-9">
+                            <select class="appliance form-control" id="appliance" name="appliance" >
+                                <option>Light</option>
+                                <option>Fan</option>
+                                <option>Television</option>
+                                <option>Socket</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dateStart" class="col-sm-3 control-label">From</label>
+                        <div class="col-sm-9">
+                          <input type="date" class="form-control" id="datepicker1" name="dateStart" placeholder="Select the Start Date" >
+                          <div class="errors" id="error-datepicker1">
+                          </div> 
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dateEnd" class="col-sm-3 control-label">To</label>
+                        <div class="col-sm-9">
+                          <input type="date" class="form-control" id="datepicker2" name="dateEnd" placeholder="Select the End Date" >
+                          <div class="errors" id="error-datepicker2">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="timepickerStart" class="col-sm-3 control-label">From</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="timepicker form-control" id="timepickerStart" name="timepickerStart" placeholder="Select the Start Time" >
+                          <div class="errors" id="error-timepicker1">
+                          </div>
+                        </div>
+                      </div>
+
+
+                       <div class="form-group">
+                        <label for="timepickerEnd" class="col-sm-3 control-label">To</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="timepicker form-control" id="timepickerEnd" name="timepickerEnd" placeholder="Select the End Time" >
+                          <div class="errors" id="error-timepicker2">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="option" class="col-sm-3 control-label">Option</label>
+                        <div class="col-sm-9">
+                            <select class="option form-control" id="option" name="option" >
+                                <option>All</option>
+                                <option>Current</option>
+                                <option>RealPower</option>
+                                <option>PowerFactor</option>
+                            </select>
+                        </div>
+                      </div>
+           
+                      <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                          <button  type="button" class="btn btn-info" onclick="Search()">Search</button>
+                        </div>
+                      </div>
+                    </form>
+                
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-sm-offset-2" >
+                     <p id="emptyResult-error" style="color: red; font-size:16px "> </p>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+        <!--/col-span-9-->
+    </div>
+</div>
+
+
+<footer class="text-center" id="footer" >SECAB ©2016 - All Rights Reserved.</footer>
+
+</div>
+
+<script src="js/jquery-2.2.0.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-validate.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/history.js" ></script>
+<script language="JavaScript" type="text/javascript" src="js/logout.js" ></script>
+<script language="JavaScript" type="text/javascript" src="js/wickedpicker.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/highcharts.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/exporting.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/autoDate.js"></script>
+
+
+</body>
+
+</html>

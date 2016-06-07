@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="refresh" content="10">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+
+        <title>Home</title>
+        <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" /> 
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+            <link href="css/styles.css" rel="stylesheet">
+     
+    </head>
+<body>
+
+<div class="header clearfix" id="header">
+    <nav>
+        <ul class="nav nav-pills pull-right" id="logout">
+            <li role="presentation" ><a href="#" style="color:white" >Log Out</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <br>
+            <p class="text-center" style="color: green ; font-size:16px">Energy And Cost Analysis</p>
+            
+            <hr>
+
+            <div class="btn-group btn-group-vertical btn-group-lg vertical-btns" >
+                         
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='index.html' "> 
+                    Home
+                </button> 
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='energyMeter.html' "> 
+                    Energy Meter
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='qualityStats.html' "> 
+                    Quality Stats
+                </button> 
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='history.html' "> 
+                    View History
+                </button>
+                <!--  <button class="btn btn-default btns-color" type="button" onclick="window.location.href='cost.html' ">
+                    Cost Calculator
+                </button>-->
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='settings.html' ">
+                    Settings
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='aboutUS.html' "> 
+                    About Us
+                </button>
+                <button class="btn btn-default btns-color" type="button" onclick="window.location.href='team.html' "> 
+                    Team
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-8 col-sm-offset-2 col-sm-pull-1" id="middle-screen">
+            <br>
+            <div class="row">
+                <div class="col-sm-offset-4" >
+                     <p  style="color: green; font-size:24px; "> <b>Real Time Control Board</b> </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                 <div class=" col-sm-offset-1 col-sm-7">
+                    <p style="color: green; font-size:20px;"> Welcome <b><span id="user-name" style="color:#315D7B"></span></b> to SECAB Services</p>
+                </div>
+                <div class=" col-sm-offset-2">
+                    <p style="color: green; font-size:20px;"> Voltage: <b><span id="voltage-board" style="color:#315D7B"> 0 </span></b> V</p>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-3" id="no-data" style="color:red ; font-size:26px" >
+                </div>
+            </div>
+
+            <div class="row" id="board">
+                <div class="col-sm-12">
+                    <div class="row board-parameters" >
+                        <div class=" col-sm-2 col-sm-offset-1 " >
+                            <img  src="images/light.png" />
+                            <img  id="device-1"  onclick="UpdateImage(1)" />
+                        </div>
+                        <div class="col-sm-2" id="para-device-1">
+                            <br>
+                            <table  style="width:50%">
+                              <tr>
+                                <td>I:</td>
+                                <td id="current-device-1" style="color:#315D7B">0</td> 
+                                <td>A</td>
+                              </tr>
+                              <tr>
+                                <td>P:</td>
+                                <td id="power-device-1" style="color:#315D7B">0</td> 
+                                <td>W</td>
+                              </tr>
+                               <tr>
+                                <td>pf:</td>
+                                <td id="pF-device-1" style="color:#315D7B">0</td> 
+                              </tr>
+                            </table>
+                        </div>
+
+                        <div class=" col-sm-2 col-sm-offset-2" >
+                            <img  src="images/fan.png" />
+                            <img  id="device-2" onclick="UpdateImage(2)" />
+                        </div>  
+                        <div class="col-sm-2" id="para-device-2">
+                            <br>
+                            <table style="width:50%" >
+                              <tr>
+                                <td>I:</td>
+                                <td id="current-device-2" style="color:#315D7B">0</td> 
+                                <td>A</td>
+                              </tr>
+                              <tr>
+                                <td>P:</td>
+                                <td id="power-device-2" style="color:#315D7B">0</td> 
+                                <td>W</td>
+                              </tr>
+                               <tr>
+                                <td>pf:</td>
+                                <td id="pF-device-2" style="color:#315D7B">0</td> 
+                              </tr>
+                            </table>
+                        </div> 
+                    </div>
+
+                    <br><br><br>
+
+                    <div class="row board-parameters">
+                         <div class=" col-sm-2 col-sm-offset-1" >
+                            <img  src="images/tv.png" />
+                            <img  id="device-3" onclick="UpdateImage(3)" />
+                        </div>
+                        <div class="col-sm-2" id="para-device-3">
+                            <br>
+                            <table  style="width:50%">
+                              <tr>
+                                <td>I:</td>
+                                <td id="current-device-3" style="color:#315D7B">0</td> 
+                                <td>A</td>
+                              </tr>
+                              <tr>
+                                <td>P:</td>
+                                <td id="power-device-3" style="color:#315D7B">0</td> 
+                                <td>W</td>
+                              </tr>
+                               <tr>
+                                <td>pf:</td>
+                                <td id="pF-device-3" style="color:#315D7B">0</td> 
+                              </tr>
+                            </table>
+                        </div>
+
+                        <div class=" col-sm-2 col-sm-offset-2" >
+                            <img  src="images/socket.png" />
+                            <img  id="device-4" onclick="UpdateImage(4)" />    
+                        </div>
+                        <div class="col-sm-2" id="para-device-4" >
+                            <br>
+                            <table style="width:50%">
+                              <tr>
+                                <td>I:</td>
+                                <td id="current-device-4" style="color:#315D7B">0</td> 
+                                <td>A</td>
+                              </tr>
+                              <tr>
+                                <td>P:</td>
+                                <td id="power-device-4" style="color:#315D7B">0</td> 
+                                <td>W</td>
+                              </tr>
+                               <tr>
+                                <td>pf:</td>
+                                <td id="pF-device-4" style="color:#315D7B">0</td> 
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class="row">
+              <div class="col-sm-12">
+                <p id="States-Error" style="color: red ; font-size:14px"> </p>
+              </div>
+            </div>
+        </div>
+        <!--/col-span-9-->
+    </div>
+</div>
+
+
+<footer class="text-center" id="footer"  style="margin-top:124px" >SECAB ©2016 - All Rights Reserved.</footer>
+
+</div>
+
+
+<script src="js/jquery-2.2.0.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/index.js" ></script>
+<script language="JavaScript" type="text/javascript" src="js/logout.js" ></script>
+</body>
+
+</html>
